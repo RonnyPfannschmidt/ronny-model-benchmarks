@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77.0", "setuptools-scm>=9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ronny-model-benchmarks"
+description = "Model benchmarking utilities"
+authors = [{name = "Ronny Pfannschmidt"}]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "pydantic-ai",
+    "ollama",
+    "click>8"
+]
+dynamic = ["version"]
+
+
+scripts.ronny-model-benchmarks = "ronny.model_benchmarks.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/RonnyPfannschmidt/ronny-model-benchmarks"
+Repository = "https://github.com/RonnyPfannschmidt/ronny-model-benchmarks"
+
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ronny*"]
+
+[tool.setuptools.package-dir]
+"ronny.model_benchmarks" = "ronny/model_benchmarks"
