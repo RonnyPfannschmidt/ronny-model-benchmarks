@@ -32,6 +32,12 @@ Homepage = "https://github.com/RonnyPfannschmidt/ronny-model-benchmarks"
 Repository = "https://github.com/RonnyPfannschmidt/ronny-model-benchmarks"
 
 
+[dependency-groups]
+
+test = ["pytest", "pytest-xdist"]
+
+[tool.uv]
+default-groups = ["test"]
 
 [tool.setuptools.packages.find]
 where = ["."]
